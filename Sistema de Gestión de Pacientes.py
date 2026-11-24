@@ -22,7 +22,7 @@ class paciente:
         self.eps = input("Ingrese la EPS del paciente: ")
         self.peso = input("Ingrese el peso del paciente: ")
         self.estatura = input("Ingrese la estatura del paciente: ")
-        self.guardar_datos_paciente()
+        
 
 class contacto_emergencia:
     def __init__(self, nombre_familiar, parentesco, numero_telefono):
@@ -34,7 +34,6 @@ class contacto_emergencia:
         self.nombre_familiar = input("Ingrese el nombre del familiar: ")
         self.parentesco = input("Ingrese el parentesco: ")
         self.numero_telefono = input("Ingrese el numero de telefono del familiar: ")
-        self.guardar_datos_contacto_emergencia()
 
 class historia_clinico:
     def __init__(self, motivo_consulta, antecedentes_personales, antecedentes_familiares, alergias, medicamentos_actuales, cirugias, habitos):
@@ -54,7 +53,6 @@ class historia_clinico:
         self.medicamentos_actuales = input("Ingrese los medicamentos actuales: ")
         self.cirugias = input("Ingrese las cirugías previas: ")
         self.habitos = input("Ingrese los hábitos del paciente: ")
-        self.guardar_datos_historia_clinica()
 
 class cita:
     def __init__(self, paciente, fecha, medico, orden_medica, consentimiento_familiar_firmado, consentimiento_firmado, valor_copago):
@@ -74,7 +72,6 @@ class cita:
         self.consentimiento_familiar_firmado = input("Ingresar si el familiar firmo el consentimiento (S/N): ")
         self.consentimiento_firmado = input("Ingresar si el paciente firmo el consentimiento (S/N): ")
         self.valor_copago = input("Ingresar el valor del copago: ")
-        self.guardar_datos_cita()
 
 while True:
     print("\n=== Sistema de Gestión de Pacientes ===")
@@ -83,6 +80,7 @@ while True:
     print("2. Ingresar datos del contacto de emergencia")
     print("3. Ingresar datos de la historia clínica")
     print("4. Cita médica")
+    print("5. Salir")
     opcion = input("\nSeleccione una opción: ")
     match opcion:
         case "1":
@@ -101,5 +99,8 @@ while True:
             cita1 = cita("", "", "", "", "", "", "")
             cita1.ingresar_datos_cita()
             print("Datos de la cita ingresados correctamente.")
+        case "5":
+            print("SALIR")
+            break
         case _:
             print("Opción no válida. Por favor, seleccione una opción válida.")
